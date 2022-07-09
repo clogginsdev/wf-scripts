@@ -9,8 +9,6 @@ const leverEngineering = document.getElementById('leverItems-engineering');
 const leverSales = document.getElementById('leverItems-sales');
 const leverOperations = document.getElementById('leverItems-operations');
 const filterSet = document.getElementById('filter-set');
-const noJobs = document.getElementById('emptyJobs');
-const headingGeneral = document.getElementById('heading-gen');
 
 function state() {
     fetch(url, { headers })
@@ -103,7 +101,6 @@ filterSet.addEventListener('change', (e) => {
                 }
             }
             // if the link doesn't match filter, hide it and the wrapper's h2
-            console.log(`This is :`, link.length)
             link.forEach(item => {
                 if ( filter === 'All') {
                     item.classList.remove('hide');
@@ -123,7 +120,7 @@ filterSet.addEventListener('change', (e) => {
                 wrapper.classList.remove('hide');
             }
             // if the filter is not 'All' and the wrapper innertext doesn't include the filter , hide the wrapper
-            const wrapperClass = wrapper.classList.contains('Engineering');
+            const wrapperClass = wrapper.classList.contains('engineering');
             console.log(wrapper.innerText);
             if (filter !== 'All') {
                 if (!wrapper.innerHTML.includes(filter) && wrapperClass) {
@@ -153,7 +150,7 @@ filterSet.addEventListener('change', (e) => {
             } else {
                 wrapper.classList.remove('hide');
             }
-            const wrapperClass3 = wrapper.classList.contains('Operations');
+            const wrapperClass3 = wrapper.classList.contains('operations');
             console.log(wrapper.innerText);
             if (filter !== 'All') {
                 if (!wrapper.innerHTML.includes(filter) && wrapperClass3) {
@@ -180,7 +177,7 @@ filterSet.addEventListener('change', (e) => {
             } else {
                 wrapper.classList.remove('hide');
             }
-            const wrapperClass2 = wrapper.classList.contains('Sales');
+            const wrapperClass2 = wrapper.classList.contains('sales');
             console.log(wrapper.innerText);
             if (filter !== 'All') {
                 if (!wrapper.innerHTML.includes(filter) && wrapperClass2) {
@@ -208,7 +205,7 @@ filterSet.addEventListener('change', (e) => {
                 wrapper.classList.remove('hide');
             }
             // if the links do not match filter hide them
-            const wrapperClass1 = wrapper.classList.contains('General');
+            const wrapperClass1 = wrapper.classList.contains('general');
             console.log(wrapper.innerText);
             if (filter !== 'All') {
                 if (!wrapper.innerHTML.includes(filter) && wrapperClass1) {
